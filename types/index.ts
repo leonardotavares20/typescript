@@ -44,3 +44,18 @@ type MathOperation = (x: number, y: number) => number;
 const add: MathOperation = (x, y) => x + y;
 const multiply: MathOperation = (x, y) => x * y;
 const subtract: MathOperation = (x, y) => x - y;
+
+// o type unknown é um supertipo de todos os outros tipos. Diferente do any, ele força o desenvolvedor a fazer uma verificação de tipo antes de realizar operações com o valor.
+
+// o type unknown pode ser usado em respostas de APIs, onde o tipo do dado retornado pode ser incerto ou variar, e voce pode usar type narrowing para garantir que o dado seja do tipo esperado antes de usá-lo.
+let value: unknown;
+let value2: any;
+
+// o value2 pode ser atribuido a qualquer outro tipo sem erro porque é do tipo any
+value.toString(); // ok
+
+// value.toFixed(2); // a propriedade 'toFixed' nao existe no tipo 'unknown'
+
+if (typeof value === "string") {
+  value.toUpperCase(); // agora o typescript sabe que value é uma string
+}

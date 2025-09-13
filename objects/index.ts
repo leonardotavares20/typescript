@@ -48,6 +48,9 @@ function createHero(hero: SuperHero) {
 createHero(hero);
 
 // discrimating unions
+// é uma técnica usada para criar tipos que podem ser um de vários tipos diferentes, mas com uma propriedade comum que pode ser usada para distinguir entre os tipos
+
+// nesse exemplo, a propriedade "type" é usada para discriminar entre os tipos Dog e Cat
 
 type Dog = {
   type: "dog";
