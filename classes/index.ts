@@ -80,3 +80,26 @@ class Circle extends GeometricShape {
 const area = new Circle("medium", 10);
 console.log(area.getShapeInfo());
 console.log(area.getInfo());
+
+// implements
+
+interface HeroInterface {
+  name: string;
+  age: number;
+  powers: string[];
+  bio(): string;
+}
+
+class Batman implements HeroInterface {
+  name: string;
+  age: number;
+  powers: string[];
+  constructor(name: string, age: number, powers: string[]) {
+    this.name = name;
+    this.age = age;
+    this.powers = powers;
+  }
+  bio(): string {
+    return `${this.name} (${this.age}) - ${this.powers.join(", ")}`;
+  }
+}
